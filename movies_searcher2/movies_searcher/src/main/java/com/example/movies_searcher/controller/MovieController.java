@@ -20,11 +20,11 @@ public class MovieController {
     @GetMapping("/get")
     public List<Movies> getAllMovies() {
         List<Movies> movies = moviesService.listarPeliculas();
-       // movies.forEach(movie -> System.out.println(movie.toString()));
+
         return movies;
     }
 
-
+    // Esto es un post
     @PostMapping("/buscar")
     public ResponseEntity<String> getMovieByName(@RequestBody BuscarRequest buscarRequest) {
 
@@ -59,6 +59,8 @@ public class MovieController {
         return resultados;
     }
 
+
+    //Esto es un post movie
     @PostMapping("/post_movie")
     public Movies postMovies(@RequestBody Movies movies){
         return moviesService.saveorUpdateMovie(movies);
